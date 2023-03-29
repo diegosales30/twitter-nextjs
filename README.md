@@ -12,11 +12,5 @@ npx create-next-app --typescript
 
 ```
 npm install -D tailwindcss postcss autoprefixer
-...
 
-<<<<<<< HEAD
-test
 ```
-=======
-```
->>>>>>> 4cb3a7289bca6c7af95a967337669722554b63cc
