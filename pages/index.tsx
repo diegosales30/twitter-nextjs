@@ -1,4 +1,8 @@
 
 export default function Home() {
-  return <div className="text-3xl text-sky-500">Hello Word!</div>;
+  return (
+    <div>
+      <h1 className="text-3xl text-sky-500">Hello Word!</h1>
+    </div>
+  )
 }
