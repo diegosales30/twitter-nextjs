@@ -14,6 +14,7 @@ npm run dev
 npm install -D tailwindcss postcss autoprefixer
   -> npx tailwindcass init -p
 npm install react-icons
+npm install zustand
 ```
 
 
