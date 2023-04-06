@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 
-//npm prisma db push
+//npx prisma db push
 
 generator client {
   provider = "prisma-client-js"

@@ -19,6 +19,16 @@ npm install zustand
 ----------
 npm install -D prisma
   -> npx prisma init
+  -> npx prisma db push
+npm install @prisma/client
+----------
+
+npm install bcrypt
+npm install -D @types/bcrypt
+
+npm install next-auth
+npm install @next-auth/prisma-adapter
+
 ```
 
 
