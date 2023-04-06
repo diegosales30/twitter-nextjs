@@ -20,7 +20,7 @@ npm install zustand
 npm install -D prisma
   -> npx prisma init
   -> npx prisma db push
-npm install @prisma/client
+npm install @prisma/client@4.11.0
 ----------
 
 npm install bcrypt
