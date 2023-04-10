@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+import { useCallback } from "react";
 import { IconType } from "react-icons";
 
 interface SidebarItemProps {
@@ -13,8 +15,20 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   icon: Icon,
   onClick,
 }) => {
+  const router = useRouter();
+
+  const handleClick = useCallback(() => {
+    if (onClick) {
+      return onClick();
+    }
+
+    if (href) {
+      router.push(href);
+    }
+  }, [router, onClick, href]);
+
   return (
-    <div className="flex flex-row items-center">
+    <div onClick={handleClick} className="flex flex-row items-center">
       <div
         className="
             relative
@@ -33,7 +47,8 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       >
         <Icon size={28} color="white" />
       </div>
-      <div className="
+      <div
+        className="
         relative
         hidden
         lg:flex
@@ -45,12 +60,15 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         hover:bg-opacity-10
         cursor-pointer
         
-      ">
-        <Icon size={24} color="white"/>
-        <p className="
+      "
+      >
+        <Icon size={24} color="white" />
+        <p
+          className="
         hidden lg:block text-white text-xl
-        ">
-            {label}
+        "
+        >
+          {label}
         </p>
       </div>
     </div>
