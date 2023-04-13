@@ -37,8 +37,9 @@ const Avatar: React.FC<AvatarProps> = ({
             cursor-pointer
             relative
             `}>
-            <Image 
-                fill
+            <Image
+            fill
+                
                 style={{
                     objectFit: 'cover',
                     borderRadius: '100%'
