@@ -34,6 +34,7 @@ npm install swr
 npm install axios
 npm install react-hot-toast
 npm install react-spinners
+npm install date-fns
 ```
 
 
