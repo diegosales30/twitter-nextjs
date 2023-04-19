@@ -6,6 +6,7 @@ import usePost from "../../hooks/usePost";
 import Form from "../../components/Form";
 import Header from "../../components/Header";
 import PostItem from "../../components/posts/PostItem";
+import CommentFeed from "../../components/posts/CommentFeed";
 
 
 const PostView = () => {
@@ -27,7 +28,7 @@ const PostView = () => {
       <Header showBackArrow label="Tweet" />
       <PostItem data={fetchedPost} />
       <Form postId={postId as string} isComment placeholder="deixar cometário" />
-      {/* <CommentFeed comments={fetchedPost?.comments} /> */}
+      <CommentFeed comments={fetchedPost?.comments} />
     </>
    );
 }

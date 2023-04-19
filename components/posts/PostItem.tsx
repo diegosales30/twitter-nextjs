@@ -20,8 +20,8 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
   const { data: currentUser } = useCurrentUser();
   const { hasLiked, toggleLike } = useLike({ postId: data.id, userId});
 
-  const goToUser = useCallback((ev: any) => {
-    ev.stopPropagation();
+  const goToUser = useCallback((event: any) => {
+    event.stopPropagation();
     router.push(`/users/${data.user.id}`)
   }, [router, data.user.id]);
 
@@ -29,8 +29,8 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
     router.push(`/posts/${data.id}`);
   }, [router, data.id]);
 
-  const onLike = useCallback(async (ev: any) => {
-    ev.stopPropagation();
+  const onLike = useCallback(async (event: any) => {
+    event.stopPropagation();
 
     if (!currentUser) {
       return loginModal.onOpen();
