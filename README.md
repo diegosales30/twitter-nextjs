@@ -1,8 +1,8 @@
-### Clone do Twitter com React, Next.js, Tailwind, Prisma, MongoDB, NextAuth e Vercel
+# Clone do Twitter com React, Next.js, Tailwind, Prisma, MongoDB, NextAuth e Vercel
 
 vercel -> https://twitter-nextjs-three.vercel.app/
 
-## Este é um projeto de clone do Twitter que foi construído usando as seguintes tecnologias:
+### Este é um projeto de clone do Twitter que foi construído usando as seguintes tecnologias:
 
     React - Biblioteca JavaScript para criar interfaces de usuário.
     Next.js - Estrutura React para criar aplicativos da web com renderização do lado do servidor e pré-renderização.
@@ -12,7 +12,7 @@ vercel -> https://twitter-nextjs-three.vercel.app/
     NextAuth - Biblioteca de autenticação para Next.js.
     Vercel - Plataforma de implantação para projetos da web.
 
-## Como executar o projeto
+### Como executar o projeto
 
 Antes de tudo, é necessário ter o Node.js instalado em sua máquina. Você pode fazer o download no site oficial: https://nodejs.org/.
 
@@ -33,7 +33,7 @@ yarn install
 
     Configure as variáveis de ambiente:
 
-Crie um arquivo .env.local na raiz do projeto e adicione as seguintes variáveis de ambiente:
+### Crie um arquivo .env.local na raiz do projeto e adicione as seguintes variáveis de ambiente:
 
 makefile
 
@@ -52,7 +52,7 @@ yarn dev
 
     Acesse o aplicativo no seu navegador em http://localhost:3000.
 
-Como contribuir
+### Como contribuir
 
 Se você quiser contribuir com este projeto, por favor, siga estas etapas:
 
@@ -62,6 +62,6 @@ Se você quiser contribuir com este projeto, por favor, siga estas etapas:
     Envie para a branch original: git push origin minha-branch.
     Crie uma solicitação de pull request.
 
-Licença
+### Licença
 
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
