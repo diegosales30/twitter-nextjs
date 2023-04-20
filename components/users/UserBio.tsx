@@ -12,7 +12,7 @@ interface UserBioProps {
   userId: string;
 }
 
-const UserBio: React.FC<UserBioProps> = ({ userId}) => {
+const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const { data: currentUser } = useCurrentUser();
   const { data: fetchedUser } = useUser(userId);
 
@@ -37,9 +37,9 @@ const UserBio: React.FC<UserBioProps> = ({ userId}) => {
         ) : (
           <Button
             onClick={toggleFollow} 
+            label={isFollowing ? 'Unfollow' : 'Follow'}
             secondary={!isFollowing}
             outline={isFollowing}
-            label={isFollowing ? 'Unfollow' : 'Follow'}
           />
         )}
       </div>

@@ -91,7 +91,7 @@ const RegisterModal = () => {
 
     const footerContent = (
         <div className="text-neutral-400 text-center mt-4">
-            <p>Already have an account? 
+            <p>Já está cadastrado? 
             <span
                 onClick={onToggle}
                 className="
@@ -100,7 +100,7 @@ const RegisterModal = () => {
                     hover:underline
                     ml-1
                 "
-            >Sign in</span>
+            >Fazer Login</span>
             </p>
             
         </div>
@@ -110,8 +110,8 @@ const RegisterModal = () => {
         <Modal 
             disabled={isLoading}
             isOpen={registerModal.isOpen}
-            title="Create an account"
-            actionLabel="Register"
+            title="Criar uma conta"
+            actionLabel="Cadastrar"
             onClose={registerModal.onClose}
             onSubmit={onSubmit}
             body={bodyContent}

@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 
 import useCurrentUser from '../hooks/useCurrentUser';
 import useLoginModal from '../hooks/useLoginModal';
+import usePost from '../hooks/usePost';
 import usePosts from '../hooks/usePosts';
 import useRegisterModal from '../hooks/useRegisterModal';
 
@@ -24,7 +25,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
   const { data: currentUser } = useCurrentUser();
   const { mutate: mutatePosts } = usePosts();
-  const { mutate: mutatePost } = usePosts(postId as string);
+  const { mutate: mutatePost } = usePost(postId as string);
 
   const [body, setBody] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -52,8 +53,8 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
     <div className="border-b-[1px] border-neutral-800 px-5 py-2">
       {currentUser ? (
         <div className="flex flex-row gap-4">
-          <div className='flex w-10 h-10 mt-2'>
-            <Avatar userId={currentUser?.id}  />
+          <div>
+            <Avatar userId={currentUser?.id} />
           </div>
           <div className="w-full">
             <textarea

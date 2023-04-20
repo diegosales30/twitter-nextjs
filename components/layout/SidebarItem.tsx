@@ -1,15 +1,15 @@
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 import { IconType } from "react-icons";
 import { useRouter } from "next/router";
-import { BsDot } from "react-icons/bs";
 
 import useCurrentUser from "../../hooks/useCurrentUser";
 import useLoginModal from "../../hooks/useLoginModal";
+import { BsDot } from "react-icons/bs";
 
 interface SidebarItemProps {
   label: string;
-  href?: string;
   icon: IconType;
+  href?: string;
   onClick?: () => void;
   auth?: boolean;
   alert?: boolean;
@@ -21,22 +21,22 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   icon: Icon,
   onClick,
   auth,
-  alert
+  alert,
 }) => {
-  const loginModel = useLoginModal();
-  const {data: currentUser} = useCurrentUser();
+  const loginModal = useLoginModal();
+  const { data: currentUser } = useCurrentUser();
   const router = useRouter();
   const handleClick = useCallback(() => {
     if (onClick) {
       return onClick();
     }
 
-    if(auth && !currentUser) {
-      loginModel.onOpen();
-    }else if (href) {
+    if (auth && !currentUser) {
+      loginModal.onOpen();
+    } else if (href) {
       router.push(href);
     }
-  }, [router, onClick, href, currentUser, auth, loginModel]);
+  }, [router, href, auth, loginModal, onClick, currentUser]);
 
   return (
     <div onClick={handleClick} className="flex flex-row items-center">
@@ -57,7 +57,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
             "
       >
         <Icon size={28} color="white" />
-        {alert ? <BsDot className="text-sky-500 absolute -top-4 left-0" size={70} /> : null}
+        {alert ? (
+          <BsDot className="text-sky-500 absolute -top-4 left-0" size={70} />
+        ) : null}
       </div>
       <div
         className="
@@ -82,7 +84,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         >
           {label}
         </p>
-        {alert ? <BsDot className="text-sky-500 absolute -top-4 left-0" size={70} /> : null}
+        {alert ? (
+          <BsDot className="text-sky-500 absolute -top-4 left-0" size={70} />
+        ) : null}
       </div>
     </div>
   );

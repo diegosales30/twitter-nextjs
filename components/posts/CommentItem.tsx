@@ -1,8 +1,8 @@
-import { useRouter } from 'next/router';
-import { useCallback, useMemo } from 'react';
-import { formatDistanceToNowStrict } from 'date-fns';
+import { useRouter } from "next/router";
+import { useCallback, useMemo } from "react";
+import { formatDistanceToNowStrict } from "date-fns";
 
-import Avatar from '../Avatar';
+import Avatar from "../Avatar";
 
 interface CommentItemProps {
   data: Record<string, any>;
@@ -11,8 +11,8 @@ interface CommentItemProps {
 const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
   const router = useRouter();
 
-  const goToUser = useCallback((ev: any) => {
-    ev.stopPropagation();
+  const goToUser = useCallback((event: any) => {
+    event.stopPropagation();
 
     router.push(`/users/${data.user.id}`)
   }, [router, data.user.id]);
@@ -36,9 +36,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
         transition
       ">
       <div className="flex flex-row items-start gap-3">
-        <div className='flex w-10 h-10'>
         <Avatar userId={data.user.id} />
-        </div>
         <div>
           <div className="flex flex-row items-center gap-2">
             <p 
